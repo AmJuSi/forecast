@@ -78,7 +78,14 @@ map.on("click", function (evt) {
     showForecast(`https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=${evt.latlng.lat}&lon=${evt.latlng.lng}`);
 })
 
-// popup was am anfang geöffnet wird
+// klick auf Innsbruck simulieren
 map.fire("click", {
     latlng: ibk
 });
+
+// Funktion für Windkarte
+async function loadWind(url) {
+    const response = await fetch(url);
+    const jsondata = await response.json();
+}
+loadWind("https://geographie.uibk.ac.at/data/ecmwf/data/wind-10u-10v-europe.json");
