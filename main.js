@@ -41,6 +41,8 @@ async function showForecast(url) {
         pointToLayer: function (feature, latlng) {
             let details = feature.properties.timeseries[0].data.instant.details;
             let time = new Date(feature.properties.timeseries[0].time);
+            let symbol = feature.properties.timeseries[0].data.next_1_hours.summary.symbol_code;
+
             let content = `
             <h4>Wettervorhersage für ${time.toLocaleString()} </h4>
             <ul>
