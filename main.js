@@ -61,7 +61,10 @@ async function showForecast(url) {
                 content += `<img src="icons/${symbol}.svg" alt="${symbol}" style="width:32px" title="${time.toLocaleString()}">`;
             }
 
-
+            //link zum Datendownload
+            content += `
+            <p><a href="${url}" target="met.no">Daten zum downloaden</a></p>
+            `;
             L.popup(latlng, {
                 content: content
             }).openOn(themaLayer.forecast);
