@@ -92,6 +92,13 @@ async function loadWind(url) {
     L.velocityLayer({
         data: jsondata,
         lineWidth: 2,
+        displayOptions: {
+            directionString: "Windrichtung",
+            speedString: "Windgeschwindigkeit",
+            speedUnit: "k/h",
+            position: "bottomright",
+            velocityType: "",
+        }
     }).addTo(themaLayer.wind);
 }
 loadWind("https://geographie.uibk.ac.at/data/ecmwf/data/wind-10u-10v-europe.json");
